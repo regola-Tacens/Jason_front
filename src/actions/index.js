@@ -5,23 +5,22 @@ const API = axios.create({
 });
 
 export const getArgonautes = async () => {
-  try{
+  try {
     const argonautes = await API.get("argonautes");
     return argonautes.data;
-  }catch (error){
-
+  } catch (error) {
+    console.log(error);
   }
-  
 };
 
-export const createArgonautes = async (argonaute) => {
-   const newArgonaute = await API.post("argonautes",argonaute)
+export const createArgonautes = async (argonaute, setTrigger) => {
+
+  try {
+    const newArgonaute = await API.post("argonautes", argonaute);
+    setTrigger(true);
+  } catch (error) {
+    console.log(error)
+  }
+
 };
 
-// export const createArgonautes = (argonaute) => {
-//   axios({
-//     method: "post",
-//     url: "http://localhost:5000/argonautes",
-//     data: argonaute
-//   });
-// };

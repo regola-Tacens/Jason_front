@@ -7,19 +7,28 @@ import { getArgonautes } from "./actions";
 
 function App() {
   const [argonautes, setArgonautes] = useState([]);
+  const [argonaute, setArgonaute] = useState();
+  const [trigger, setTrigger] = useState(false);
 
   useEffect(() => {
     const argonauteList = async () => {
       const argos = await getArgonautes();
       setArgonautes(argos);
+      setTrigger(false);
     };
     argonauteList();
-  }, [argonautes]);
+  }, [trigger]);
 
   return (
     <div className="App">
       <Header />
-      <FormArgo />
+      <FormArgo
+        argonaute={argonaute}
+        setTrigger={setTrigger}
+        setArgonaute={setArgonaute}
+        setArgonautes={setArgonautes}
+        argonautes={argonautes}
+      />
       <Argonautes argonautes={argonautes}/>
     </div>
   );
