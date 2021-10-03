@@ -4,6 +4,7 @@ import Argonautes from "./components/Argonautes";
 import FormArgo from "./components/FormArgo/index.js";
 import Header from "./components/Header";
 import { getArgonautes } from "./actions";
+import Footer from "./components/Footer";
 
 function App() {
   const [argonautes, setArgonautes] = useState([]);
@@ -30,6 +31,7 @@ function App() {
         argonautes={argonautes}
       />
       <Argonautes argonautes={argonautes}/>
+      <Footer />
     </div>
   );
 }

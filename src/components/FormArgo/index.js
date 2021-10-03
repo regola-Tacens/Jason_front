@@ -19,6 +19,12 @@ const FormArgo = ({ setArgonaute, argonaute, setTrigger, argonautes }) => {
     // fonction qui vérifie si le nom existe déjà
     checkIfArgonauteExists(newArgonaute, argonautes);
 
+    // on interdit d'enregsitrer plus de 50 argonautes dans le bateau
+    if(argonautes.length >=50){
+      alert('le bateau est plein!');
+      return;
+    }
+
     // on ajoute le nouvel argonaute à la base de donnée et on déclenche la mise à jour de l'équipage
     createArgonautes({ username: newArgonaute }, setTrigger);
 

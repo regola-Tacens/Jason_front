@@ -6,11 +6,14 @@ export const sanitizeArgonauteInput = (author) => {
   }
 
   // on retire les espaces blancs au début et à la fin du nom, et on rejette les chiffres
-  const authorRegEx = author
+  let authorRegEx = author
     .trimStart()
     .trimEnd()
     .match(/[a-zA-Z'éèàêöï]+/g)
     .join(" ");
+
+  // on met une majuscule au début du nom si elle n'y est pas déjà
+  authorRegEx = authorRegEx.charAt(0).toUpperCase() + authorRegEx.slice(1);
 
   // on limite l'envoi du formulaire à 30 caractères
   if (authorRegEx.length >= 30) {

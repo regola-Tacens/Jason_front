@@ -1,6 +1,10 @@
 .App {
   text-align: center;
   box-sizing: border-box;
+  position:relative;
+  min-height: 100vh;
+  display: block;
+  padding-bottom: 2rem;
 }
 
 
