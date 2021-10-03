@@ -1,0 +1,16 @@
+.argonautesList{
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.argonaute{
+  display:inline-block;
+  /* margin: 0.2rem; */
+  box-sizing: border-box;
+  width:33.33%;
+  padding:0.2rem;
+}

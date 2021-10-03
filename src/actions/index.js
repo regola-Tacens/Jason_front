@@ -7,13 +7,10 @@ const API = axios.create({
 export const getArgonautes = async () => {
   try{
     const argonautes = await API.get("argonautes");
-    // console.log(argonautes.data);
     return argonautes.data;
   }catch (error){
 
   }
-  
-  // console.log(argonautes.data);
   
 };
 

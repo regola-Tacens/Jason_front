@@ -20,8 +20,7 @@ function App() {
     <div className="App">
       <Header />
       <FormArgo />
-      <Argonautes />
-      {JSON.stringify(argonautes)}
+      <Argonautes argonautes={argonautes}/>
     </div>
   );
 }
