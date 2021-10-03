@@ -13,13 +13,9 @@ export const getArgonautes = async () => {
   }
 };
 
-export const createArgonautes = async (argonaute, setTrigger) => {
+export const createArgonaute = async (argonaute, setTrigger) => {
 
   try {
-    // TODO
-    // si l'argonaute est le 49 eme, on enregistre : "Jason, beau, vaillant et courageux"
-    // et on enregistre dans la foulée un 50ème argonaute :"julien : chanceux !"
-    
     const newArgonaute = await API.post("argonautes", argonaute);
     setTrigger(true);
   } catch (error) {

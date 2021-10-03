@@ -1,8 +1,9 @@
-import { createArgonautes } from "../../actions";
+import { createArgonaute } from "../../actions";
 import {
   checkIfArgonauteExists,
   sanitizeArgonauteInput,
 } from "../../selectors";
+import Form from "./Form";
 import "./styles.css";
 
 const FormArgo = ({ setArgonaute, argonaute, setTrigger, argonautes }) => {
@@ -20,29 +21,35 @@ const FormArgo = ({ setArgonaute, argonaute, setTrigger, argonautes }) => {
     checkIfArgonauteExists(newArgonaute, argonautes);
 
     // on interdit d'enregsitrer plus de 50 argonautes dans le bateau
-    if(argonautes.length >=50){
-      alert('le bateau est plein!');
+    if (argonautes.length >= 50) {
+      alert("le bateau est plein!");
+      setArgonaute("");
       return;
     }
 
+    // Si la longeur du tableau argonautes est de 48 on crée deux user, Jason et moi !
+    if (argonautes.length === 48) {
+      createArgonaute(
+        { username: "Jason, beau, vaillant et courageux" },
+        setTrigger
+      );
+      createArgonaute({ username: "Julien : chanceux !" }, setTrigger);
+      setArgonaute("");
+      return;
+    }
     // on ajoute le nouvel argonaute à la base de donnée et on déclenche la mise à jour de l'équipage
-    createArgonautes({ username: newArgonaute }, setTrigger);
+    createArgonaute({ username: newArgonaute }, setTrigger);
 
-    //on vide le formualire en remettant la valeur de l'argonaute actuel à zero
+    //on vide le formulaire en remettant la valeur de l'argonaute actuel à zero
     setArgonaute("");
   };
 
   return (
-    <div className="formArgo">
-      <h2>Ajouter un(e) Argonaute</h2>
-      <form>
-        <label>Nom de l&apos;Argonaute</label>
-        <input value={argonaute} onChange={handleChange} required />
-        <button type="submit" onClick={handleSubmit}>
-          send
-        </button>
-      </form>
-    </div>
+    <Form
+      handleChange={handleChange}
+      argonaute={argonaute}
+      handleSubmit={handleSubmit}
+    />
   );
 };
 

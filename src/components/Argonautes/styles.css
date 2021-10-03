@@ -13,12 +13,24 @@
   box-sizing: border-box;
   margin: 0.2rem;
   background-color: rgb(204, 204, 204);
-  width:32%;
+  width:32.5%;
   padding:1rem;
 }
 
 .argonaute__index{
   color: #ED7273;
   margin-bottom:0.5rem;
+}
 
+@media  (max-width: 800px) {
+  .argonaute{
+    width:49%;
+
+  }
+@media (max-width: 650px) {
+  .argonaute{
+    width:95%;
+    margin: 0.2rem auto;
+  }
+}
 }

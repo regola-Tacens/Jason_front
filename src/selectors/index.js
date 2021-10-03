@@ -10,7 +10,13 @@ export const sanitizeArgonauteInput = (author) => {
     .trimStart()
     .trimEnd()
     .match(/[a-zA-Z'éèàêöï]+/g)
-    .join(" ");
+
+  // on verifie apres cette opération que la valuer du champ ne soit pas vide
+  if (authorRegEx !==null) {
+    authorRegEx = authorRegEx.join(' ')
+  } else {
+    return;
+  }
 
   // on met une majuscule au début du nom si elle n'y est pas déjà
   authorRegEx = authorRegEx.charAt(0).toUpperCase() + authorRegEx.slice(1);

@@ -5,7 +5,7 @@ const Argonautes = ({ argonautes }) => {
   
   return (
     <>
-    <h2>Membres de l'équipage</h2>
+    <h2><span className="argonaute__index">{argonautes.length}</span> Membres d'équipage</h2>
     <div className="argonautesList">
       {argonautes.map((argonaute,index) => (
         <Argonaute key={argonaute.id} argonaute={argonaute} index={index}/>
