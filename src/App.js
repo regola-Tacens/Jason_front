@@ -30,7 +30,7 @@ function App() {
         setArgonautes={setArgonautes}
         argonautes={argonautes}
       />
-      <Argonautes argonautes={argonautes}/>
+      <Argonautes argonautes={argonautes} setTrigger={setTrigger}/>
       <Footer />
     </div>
   );
