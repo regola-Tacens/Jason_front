@@ -17,12 +17,14 @@
   width:32.5%;
   padding:1rem;
   border-radius: 5px;
-  transition: background-color 1s;
+  transition: background-color 1s, transform 1s;
+  transform: translateY(0px);
 }
 
 .argonaute:hover{
   background-color:rgb(207, 207, 207);
-  transition: background-color 0.2s;
+  transform: translateY(-3px);
+  transition: background-color 0.2s, transform 1s;
 }
 
 .argonaute::after{

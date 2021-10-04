@@ -2,3 +2,49 @@
   max-width: 960px;
   margin: 0 auto;
 }
+
+.argonaute__form{
+  background-color: #f76c6c;
+  border-radius: 5px;
+  padding:1rem;
+  width:42%;
+  margin:0 auto;
+}
+.argonaute__form__input{
+  width: 75%;
+  height: 25px;
+  border:none;
+  border-radius:  3px 0 0 3px;
+}
+.argonaute__form__label{
+  color: white;
+}
+
+.argonaute__form__submitBtn{
+  position:relative;
+  border:none;
+  height: 27px;
+  width:60px;
+  background-color:rgb(207, 207, 207);
+  border-radius: 0 3px 3px 0;
+}
+.argonaute__form__submitBtn::before{
+  top:0px;
+  left:0px;
+  position:absolute;
+  content:'';
+  border-top : 13px solid transparent;
+  border-bottom : 13px solid transparent;
+  border-left : 13px solid rgb(255, 255, 255);
+}
+
+.argonaute__form__submitBtn:hover{
+  background-color:rgb(180, 180, 180);
+}
+
+@media (max-width: 650px) {
+  .argonaute__form{
+    
+    width:65%;
+  }
+}
