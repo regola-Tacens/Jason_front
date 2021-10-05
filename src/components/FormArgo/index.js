@@ -1,4 +1,5 @@
 import { createArgonaute } from "../../actions";
+import PropTypes from 'prop-types';
 import {
   checkIfArgonauteExists,
   sanitizeArgonauteInput,
@@ -52,5 +53,13 @@ const FormArgo = ({ setArgonaute, argonaute, setTrigger, argonautes }) => {
     />
   );
 };
+
+FormArgo.propTypes = {
+  setArgonaute: PropTypes.func.isRequired,
+  argonaute: PropTypes.string,
+  setTrigger: PropTypes.func.isRequired,
+  
+
+}
 
 export default FormArgo;

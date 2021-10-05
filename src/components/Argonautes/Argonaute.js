@@ -1,4 +1,6 @@
+import React from 'react';
 import { deleteArgonaute } from "../../actions";
+import PropTypes from 'prop-types';
 import "./styles.css";
 
 const Argonaute = ({ argonaute, index, setTrigger }) => {
@@ -14,5 +16,14 @@ const Argonaute = ({ argonaute, index, setTrigger }) => {
     </div>
   );
 };
+
+Argonaute.propTypes = {
+  argonaute: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+  setTrigger: PropTypes.func.isRequired,
+}
 
 export default Argonaute;

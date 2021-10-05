@@ -1,4 +1,5 @@
 import Argonaute from "./Argonaute";
+import PropTypes from "prop-types";
 import "./styles.css";
 
 const Argonautes = ({ argonautes, setTrigger }) => {
@@ -22,6 +23,15 @@ const Argonautes = ({ argonautes, setTrigger }) => {
       </div>
     </>
   );
+};
+
+Argonautes.propTypes = {
+  argonautes: PropTypes.arrayOf(
+    PropTypes.shape({
+      username: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default Argonautes;

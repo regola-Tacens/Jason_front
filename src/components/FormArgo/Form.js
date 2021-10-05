@@ -1,4 +1,6 @@
-const Form = ({ argonaute, handleChange, handleSubmit }) => (
+import PropTypes from 'prop-types';
+
+const Form = ({ argonaute='', handleChange, handleSubmit }) => (
   <div className="formArgo">
     <h2>Ajouter un(e) Argonaute</h2>
     <form className="argonaute__form">
@@ -10,5 +12,17 @@ const Form = ({ argonaute, handleChange, handleSubmit }) => (
     </form>
   </div>
 );
+
+Form.propTypes = {
+  argonaute: PropTypes.string,
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  argonautes: PropTypes.arrayOf(
+    PropTypes.shape({
+      username: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+    }).isRequired
+  ),
+}
 
 export default Form;
