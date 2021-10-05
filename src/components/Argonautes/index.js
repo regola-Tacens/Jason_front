@@ -2,7 +2,7 @@ import Argonaute from "./Argonaute";
 import PropTypes from "prop-types";
 import "./styles.css";
 
-const Argonautes = ({ argonautes, setTrigger }) => {
+const Argonautes = ({ argonautes, setTrigger}) => {
   return (
     <>
       <h2>

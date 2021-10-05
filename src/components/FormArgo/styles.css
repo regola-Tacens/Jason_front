@@ -4,12 +4,14 @@
 }
 
 .argonaute__form{
+  position: relative;
   background-color: #f76c6c;
   border-radius: 5px;
   padding:1rem;
   width:42%;
   margin:0 auto;
 }
+
 .argonaute__form__input{
   width: 75%;
   height: 25px;

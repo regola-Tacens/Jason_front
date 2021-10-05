@@ -1,5 +1,5 @@
 import { createArgonaute } from "../../actions";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import {
   checkIfArgonauteExists,
   sanitizeArgonauteInput,
@@ -7,7 +7,13 @@ import {
 import Form from "./Form";
 import "./styles.css";
 
-const FormArgo = ({ setArgonaute, argonaute, setTrigger, argonautes }) => {
+const FormArgo = ({
+  setArgonaute,
+  argonaute,
+  setTrigger,
+  argonautes,
+  isLoading,
+}) => {
   const handleChange = (event) => {
     setArgonaute(event.target.value);
   };
@@ -50,6 +56,7 @@ const FormArgo = ({ setArgonaute, argonaute, setTrigger, argonautes }) => {
       handleChange={handleChange}
       argonaute={argonaute}
       handleSubmit={handleSubmit}
+      isLoading={isLoading}
     />
   );
 };
@@ -58,8 +65,7 @@ FormArgo.propTypes = {
   setArgonaute: PropTypes.func.isRequired,
   argonaute: PropTypes.string,
   setTrigger: PropTypes.func.isRequired,
-  
-
-}
+  isLoading: PropTypes.bool.isRequired,
+};
 
 export default FormArgo;

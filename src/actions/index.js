@@ -15,7 +15,7 @@ export const getArgonautes = async () => {
 
 export const createArgonaute = async (argonaute, setTrigger) => {
   try {
-    const newArgonaute = await API.post("argonautes", argonaute);
+    await API.post("argonautes", argonaute);
     setTrigger(true);
   } catch (error) {
     console.log(error);
